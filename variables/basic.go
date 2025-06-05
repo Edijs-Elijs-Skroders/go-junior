@@ -21,8 +21,7 @@ func BoolFunc() {
 
 }
 
-
-//TODO: Complete StructFunc() first
+// TODO: Complete StructFunc() first
 // TODO: Using the Building struct from before, create a pointer to a new Building
 // TODO: Create a slice of pointers to buildings, which contain one pointer to a building
 // TODO: Add the first pointer to the slice
