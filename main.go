@@ -1,7 +1,7 @@
 package main
 
-import "course/variables"
+import "course/err"
 
 func main() {
-	variables.BoolFunc()
+	err.ErrFunc()
 }

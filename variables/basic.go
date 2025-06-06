@@ -30,7 +30,7 @@ func IntFunc() {
 // TODO: Make all characters in the third string upper case: use strings package
 func StringFunc() {
 	s1, s2 := "one ", "two"
-	s3 := s1 + s2+ "!"
+	s3 := s1 + s2 + "!"
 	fmt.Println("s3:", s3)
 
 	fmt.Println(strings.ToUpper(s3))
@@ -48,7 +48,7 @@ func BoolFunc() {
 	b4 := 4 < 5
 	b5 := 5 >= 1
 	b6 := 5 <= 6
-	b7 :=  b1 || b2
+	b7 := b1 || b2
 	b8 := b3 && b4
 	b9 := !b6
 
@@ -62,9 +62,7 @@ func BoolFunc() {
 	fmt.Println("b8: ", b8)
 	fmt.Println("b9: ", b9)
 
-
 }
-
 
 // TODO: Complete StructFunc() first
 // TODO: Using the Building struct from before, create a pointer to a new Building
@@ -72,5 +70,21 @@ func BoolFunc() {
 // TODO: Add the first pointer to the slice
 // TODO: Change the value of first buildings street and print out the buildings
 func PointerFunc() {
+	build := &Building{
+		Street:     "rigas",
+		BuildingNr: 99,
+	}
+	slc := []*Building{
+		&Building{
+			Street:     "rigas",
+			BuildingNr: 100,
+		},
+	}
+	slc = append(slc, build)
 
+	build.BuildingNr = 101
+
+	for _, v := range slc {
+		fmt.Println(v)
+	}
 }

@@ -1,5 +1,10 @@
 package err
 
+import (
+	"fmt"
+	"strconv"
+)
+
 // TODO: import strconv
 // TODO: using for range loop, iterate over inputs and pass each input to function strconv.Atoi
 // e.g. strconv.Atoi(input)
@@ -13,6 +18,14 @@ func ErrFunc() {
 		"1.5",
 		"100",
 		"foo123",
+	}
+
+	for _, i := range inputs{
+		if v, err := strconv.Atoi(i); err != nil {
+			fmt.Println(err)
+		}else {
+		fmt.Println(v)
+		}
 	}
 
 }
