@@ -14,4 +14,5 @@ type Stats struct {
 //TODO: calculate the average from the integers in array
 //TODO: return Stats, that has all of the mentioned above
 func CalculateStats(arr [10]int) Stats {
+	return Stats{}
 }
