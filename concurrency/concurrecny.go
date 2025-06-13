@@ -31,36 +31,10 @@ func work(i int) {
 //Tip: to make a function stop infinitely reading from a channel in for-range loop, close the channel using close(). It will still read all the messages that are left
 //TODO: print out all the results using readResults function
 func WorkerChannelFunc() {
-	var wg sync.WaitGroup
-	inputs := make(chan int)
-	res := make(chan int, 100)
+	var _ sync.WaitGroup
+	_ = make(chan int)
+	_ = make(chan int, 100)
 
-	
-	f:= func(i int) {
-		defer wg.Done()
-		for v := range inputs {
-			res <- v * 5
-			fmt.Printf("worker %v working\n", i)
-			time.Sleep(200 * time.Millisecond)
-		}
-	}
-
-	for i:=0; i <5; i++ {
-		wg.Add(1)
-		go f(i)
-	}
-
-	for i := 0; i < 100; i++ {
-		inputs <- i
-	}
-
-	close(inputs)
-	wg.Wait()
-	close(res)
-
-	for r := range res {
-		readResults(r)
-	}
 
 }
 
